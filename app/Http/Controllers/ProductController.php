@@ -13,6 +13,16 @@ use Illuminate\Validation\ValidationException;
 
 class ProductController extends Controller
 {
+
+    /**
+     * 拿到一个需求的时候我应该怎么做？
+     * 1. 创建对应的数据表
+     * 2. 定义路由 /product/index /product/create /product/show /product/edit /product/delete
+     * 4. 创建对应的数据模型 / 定义验证规则
+     * 5. 创建控制器 / 在控制器中定义方法 index show create edit update delete / 下单、加入购物车、收藏、点赞
+     * 6. 创建视图 / 展示列表、详情、创建表单、编辑表单
+     */
+
     /**
      * @var Product|null 产品模型
      */
