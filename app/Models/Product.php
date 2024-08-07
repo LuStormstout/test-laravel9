@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 
 /**
- * @method static create(array $validateData)
+ * Class Product
+ * @package App\Models
  */
 class Product extends Model
 {

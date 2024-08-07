@@ -19,13 +19,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// 商品管理
 Route::prefix('product')->group(function () {
     // 商品列表页面
     Route::get('index', [ProductController::class, 'index'])->name('product.index');
-
     // 展示创建商品表单
-    Route::get('create', [ProductController::class, 'showCreateForm']);
-
+    Route::get('create', function () {
+        return view('product.create');
+    });
     // 处理产品创建请求
     Route::post('create', [ProductController::class, 'create'])->name('product.create');
+    // 商品详情页面
+    Route::get('show/{id}', [ProductController::class, 'show'])->name('product.show');
+    // 删除商品
+    Route::get('delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+    // 编辑商品
+    Route::get('edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    // 处理编辑商品请求
+    Route::put('edit/{id}', [ProductController::class, 'update'])->name('product.update');
 });
